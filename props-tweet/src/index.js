@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import moment from 'moment';
 import './index.css';
 
 var testTweet = {
     message: "Something about life.",
     gravatar: "008c5926ca861023c1d2a36653fd88e2",
     author: {
-        handle: "catperson",
-        name: "IAMA Cat Person"
+        handle: "toogreat",
+        name: "Matt Young"
     },
     likes: 2,
     retweets: 0,
@@ -19,11 +20,12 @@ function Tweet({tweet}) {
         <div className="tweet">
             <Avatar hash={tweet.gravatar}/>
             <div className="content">
-                <NameWithHandle/>
+                <NameWithHandle author={tweet.author}/>
+                <Time time={tweet.timestamp}/>
                 <Message text={tweet.message}/>
                 <div className="buttons">
-                    <ReplyButton/>
-                    <RetweetButton/>
+                    <ReplyButton count={tweet.retweets}/>
+                    <RetweetButton count={tweet.likes}/>
                     <LikeButton/>
                     <MoreOptionsButton/>
                 </div>
@@ -46,30 +48,52 @@ function Message({text}) {
         </div>
     );
 }
+function getRetweetCount(count) {
+    if (count > 0) {
+        return (
+            <span className="retweet-count">{count}</span>
+        )
+    } else {
+        return null;
+    }
+}
 
-function NameWithHandle() {
+const RetweetButton = ({count}) => (
+    <span className="retweet-button">
+        <i className="fa fa-retweet"/>
+        {getRetweetCount(count)}
+    </span>
+);
+
+const LikeButton = ({count}) => (
+    <span className="like-button">
+        <i className="fa fa-heart"/>
+        {count > 0 &&
+            <span className="like-count">
+                {count}
+            </span>}
+    </span>
+);
+
+function NameWithHandle({author}) {
+    const {name, handle} = author;
     return (
         <span className="name-with-handle">
-            <span className="name">Mathias the Gregory</span>
-            <span className="handle">@toogreat</span>
+            <span className="name">{name}</span>
+            <span className="handle">@{handle}</span>
         </span>
     );
 }
 
-const Time = () => (
-    <span className="time">3h ago</span>
-);
+const Time = ({time}) => {
+    const timeString = moment(time).fromNow();
+    return (
+        <span className="time">{timeString}</span>
+    );
+}
 
 const ReplyButton = () => (
     <i className="fa fa-reply reply-button"/>
-);
-
-const RetweetButton = () => (
-    <i className="fa fa-retweet retweet-button"/>
-);
-
-const LikeButton = () => (
-    <i className="fa fa-heart like-button"/>
 );
 
 const MoreOptionsButton = () => (
