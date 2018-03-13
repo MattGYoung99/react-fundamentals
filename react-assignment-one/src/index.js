@@ -8,7 +8,7 @@ var testSender = {
     address: 'Bingolingo, WY 62347'
 }
 var testReceiver = {
-    name: 'Danny',
+    name: 'Dan',
     street: '123 Fake street',
     address: 'Cuck, ME 12419'
 }
