@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 var testSender = {
-    name: 'Matthew',
+    name: 'Matt Young',
     street: '645 Fake street',
     address: 'Bingolingo, WY 62347'
 }
 var testReceiver = {
-    name: 'Dan',
+    name: 'Dan Man',
     street: '123 Fake street',
     address: 'Cuck, ME 12419'
 }
@@ -17,34 +17,28 @@ function AddressLabel({person}) {
     const {name, street, address} = person;
     return (
         <span>
-            <span className="name">
-                {name} 
-            </span>
-            <span className="street">
-                {street}
-             </span>
-            <span className="address">
-                {address} 
-            </span>
+            <p className="name">{name} </p>
+            <p className="street">{street}</p>
+            <p className="address">{address}</p>
         </span>
     );
 }
-const Envelope = () => {
+const Envelope = ({reciever, sender}) => {
     return (
-        <div className='wrapper'>
-            <div className="toPerson">
-                <AddressLabel
-                    person={testSender}
-                />
+        <div className="wrapper">
+            <div className="fromAddress">
+                    <AddressLabel
+                        person={sender}
+                    />
             </div>
-            <div className="fromPerson">
-                <AddressLabel 
-                    person={testReceiver}
-                />
+            <div className="toAddress">
+                    <AddressLabel
+                        person={reciever}
+                    />
             </div>
         </div>
     )
 }
 
 
-ReactDOM.render(<Envelope/>, document.querySelector('#root'));
+ReactDOM.render(<Envelope reciever={testReceiver} sender={testSender} />, document.querySelector('#root'));
