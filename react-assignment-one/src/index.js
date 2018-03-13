@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 var testSender = {
-    name: 'Matt',
+    name: 'Matthew',
     street: '645 Fake street',
     address: 'Bingolingo, WY 62347'
 }
