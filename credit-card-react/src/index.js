@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 
 const CardInfo = {
     name: 'Matthew G Young',
@@ -17,7 +16,7 @@ const CreditCard = ({info}) => {
             <p className='bank-name'>{bank}</p>
             <p className='cc-number'>{num}</p>
             <p className='expiration-date'>
-                <strong>Good Thru </strong> {expiration}
+                <b>Good Thru </b> {expiration}
             </p>
             <p className='card-holder-name'>{name}</p>
         </div>
