@@ -7,7 +7,7 @@ const CardInfo = {
     name: 'Matthew G Young',
     expiration: '07/21',
     num: '1234 5678 1234 5678',
-    bank: 'Big Stacks Inc'
+    bank: 'No Stacks Inc'
 }
 
 const CreditCard = ({info}) => {
