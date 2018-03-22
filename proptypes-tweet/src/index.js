@@ -77,10 +77,9 @@ const RetweetButton = ({count}) => (
 const LikeButton = ({count}) => (
     <span className="like-button">
       <i className="fa fa-heart"/>
-      {count > 0 &&
-        <span className="like-count">
-          {count}
-        </span>}
+        {
+        count > 0 && <span className="like-count">{count}</span>
+        }
     </span>
  );
 
