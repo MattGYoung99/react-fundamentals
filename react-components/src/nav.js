@@ -13,7 +13,7 @@ NavItem.propTypes = {
     children: PropTypes.element.isRequired
 }
 
-const NavItem = (props, {children}) => {
+const NavItem = (props, children) => {
     return (
         <a href={props.url}>
             {children}
