@@ -7,10 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 ReactDOM.render(
-    <div>
-        <ErrorBox>The World is ending</ErrorBox>
-        <ErrorBox>The World is fine</ErrorBox>
-    </div>, 
+    <ErrorBox>The World is Ending</ErrorBox>, 
     document.getElementById('root')
 );
 registerServiceWorker();
