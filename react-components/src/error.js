@@ -12,7 +12,5 @@ function ErrorBox({children}) {
 }
 
 
-export default ErrorBox;
-
 
 
