@@ -10,7 +10,7 @@ const Nav = ({children}) => {
 
 NavItem.propTypes = {
     url: PropTypes.string.isRequired,
-    children: PropTypes.element.isRequired
+    children: PropTypes.element
 }
 
 const NavItem = (props, children) => {
