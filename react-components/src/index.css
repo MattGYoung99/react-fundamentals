@@ -15,3 +15,20 @@ body {
   background-color: #FFF68F;
   color: red;
 }
+
+.dialogBox {
+  width: 24em;
+  height: 12em;
+  border: 1px solid #000;
+}
+
+button {
+  float: right;
+  margin-right: 25px;
+  background-color: #fff;
+  color: #000;
+}
+
+.dialogBody {
+  border: .25px solid #cecece
+}

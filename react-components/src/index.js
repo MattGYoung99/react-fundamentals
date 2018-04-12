@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './nav.js';
+import Dialog from './dialogbox.js';
 import registerServiceWorker from './registerServiceWorker';
 
 
 
 ReactDOM.render(
-    <App/>, 
+    <Dialog/>, 
     document.getElementById('root')
 );
 registerServiceWorker();
