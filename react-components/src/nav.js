@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 
-const Nav = ({children}) => {
+class Nav extends React.Component {
+    render() {
+    let items = React.Children.toArray(this.props.children);
         return (
-            <div>
-                {children}
-            </div>
+            <div>{items}</div>
         )
-};
-
+    }
+}
 
 class NavItem extends React.Component {
     render() {
@@ -22,6 +22,7 @@ class NavItem extends React.Component {
     }
 }
 
+    
 export default class App extends React.Component {
     render() {
         return (
@@ -30,6 +31,12 @@ export default class App extends React.Component {
                 <NavItem url='/about'>About </NavItem>
                 <NavItem url='/contact'>Contact </NavItem>
             </Nav>
+
+            // <Nav>
+            //     <NavItem url='/'>Home </NavItem>
+            //     <NavItem url='/about'>About </NavItem>
+            //     <a href='/contact'>Contact </a>
+            // </Nav>
         )
     }
 }
