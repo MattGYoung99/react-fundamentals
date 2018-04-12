@@ -1,22 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
+
+
 const Nav = ({children}) => {
-    let items = React.Children.toArray(children);
         return (
-            <div></div>
+            <div>
+                {children}
+            </div>
         )
 };
 
-NavItem.propTypes = {
-    url: PropTypes.string.isRequired,
-    children: PropTypes.element
+
+class NavItem extends React.Component {
+    render() {
+        return (
+            <a href={this.props.url}>
+                {this.props.children}
+            </a>
+        )
+    }
 }
 
-const NavItem = (props, children) => {
-    return (
-        <a href={props.url}>
-            {children}
-        </a>
-    )
-};
+export default class App extends React.Component {
+    render() {
+        return (
+            <Nav>
+                <NavItem url='/'>Home </NavItem>
+                <NavItem url='/about'>About </NavItem>
+                <NavItem url='/contact'>Contact </NavItem>
+            </Nav>
+        )
+    }
+}
